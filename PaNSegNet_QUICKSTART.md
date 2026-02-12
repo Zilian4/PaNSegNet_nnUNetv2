@@ -1,7 +1,7 @@
 # PaNSegNet Quick Start Guide
 
 This is a simplified guide for using PaNSegNet. Just copy and paste the commands below.
-
+If you are just looking for pancreas segmentation tool, and you have already have weights, skip to Section 3
 **Prerequisites:**
 - nnUNetv2 installed (see [INSTALL.md](INSTALL.md))
 - Environment variables set:
@@ -22,9 +22,9 @@ Preprocess your dataset. Replace `DATASET_ID` with your dataset ID (e.g., `001`,
 nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 
-**Example:**
+**Example(CT data, number 109 dataset in PaNSegNet):**
 ```bash
-nnUNetv2_plan_and_preprocess -d 001 --verify_dataset_integrity
+nnUNetv2_plan_and_preprocess -d 109 --verify_dataset_integrity
 ```
 
 This will:
@@ -38,7 +38,7 @@ This will:
 
 Train PaNSegNet using the `PaNSegNet_Trainer`. Replace:
 - `DATASET_ID` with your dataset ID
-- `CONFIGURATION` with `2d`, `3d_fullres`, `3d_lowres`, or `3d_cascade_fullres`
+- `CONFIGURATION` with `3d_fullres`, PaNSegNet recommand
 - `FOLD` with `0`, `1`, `2`, `3`, or `4` (for 5-fold cross-validation)
 
 ### Basic Training Command
@@ -49,18 +49,14 @@ nnUNetv2_train DATASET_ID CONFIGURATION FOLD -tr PaNSegNet_Trainer --npz
 
 **Examples:**
 
-#### Train 2D U-Net (Fold 0):
-```bash
-nnUNetv2_train 001 2d 0 -tr PaNSegNet_Trainer --npz
-```
 
 #### Train all 5 folds of 3D full resolution U-Net:
 ```bash
-nnUNetv2_train 001 3d_fullres 0 -tr PaNSegNet_Trainer --npz
-nnUNetv2_train 001 3d_fullres 1 -tr PaNSegNet_Trainer --npz
-nnUNetv2_train 001 3d_fullres 2 -tr PaNSegNet_Trainer --npz
-nnUNetv2_train 001 3d_fullres 3 -tr PaNSegNet_Trainer --npz
-nnUNetv2_train 001 3d_fullres 4 -tr PaNSegNet_Trainer --npz
+nnUNetv2_train 109 3d_fullres 0 -tr PaNSegNet_Trainer --npz
+nnUNetv2_train 109 3d_fullres 1 -tr PaNSegNet_Trainer --npz
+nnUNetv2_train 109 3d_fullres 2 -tr PaNSegNet_Trainer --npz
+nnUNetv2_train 109 3d_fullres 3 -tr PaNSegNet_Trainer --npz
+nnUNetv2_train 109 3d_fullres 4 -tr PaNSegNet_Trainer --npz
 ```
 
 #### Train on multiple GPUs (parallel):
@@ -117,7 +113,7 @@ nnUNetv2_find_best_configuration DATASET_ID -c CONFIGURATION
 
 **Example:**
 ```bash
-nnUNetv2_find_best_configuration 001 -c 3d_fullres
+nnUNetv2_find_best_configuration 109 -c 3d_fullres
 ```
 
 This will print the exact inference commands you should use.
@@ -135,7 +131,7 @@ nnUNetv2_ensemble -i FOLDER1 FOLDER2 ... -o OUTPUT_FOLDER -np NUM_PROCESSES
 nnUNetv2_ensemble -i /path/to/predictions_2d /path/to/predictions_3d_fullres -o /path/to/ensemble_output -np 4
 ```
 
-### Optional: Apply Postprocessing
+### Optional: Apply Inference
 
 Apply postprocessing to remove small connected components:
 
