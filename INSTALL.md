@@ -10,7 +10,7 @@ This guide will help you install all required packages for PaNSegNet_nnUNetv2.
 
 ## Installation Methods
 
-### Method 1: Install with conda ((Recommended))
+### Method 1: Install with conda (Recommended)
 
 ```bash
 # Create a conda environment
@@ -28,7 +28,7 @@ cd nnUNet
 pip install -e .
 ```
 
-### Method 3: Install from requirements.txt 
+### Method 2: Install from requirements.txt 
 
 ```bash
 # Navigate to the project directory
@@ -47,7 +47,7 @@ cd nnUNet
 pip install -e .
 ```
 
-### Method 2: Install using pip from pyproject.toml
+### Method 3: Install using pip from pyproject.toml
 
 ```bash
 # Navigate to the nnUNet directory
