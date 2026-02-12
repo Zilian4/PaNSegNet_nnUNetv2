@@ -1,0 +1,37 @@
+# nnUNetv2 Requirements
+# Generated from pyproject.toml
+# Python >= 3.10 required
+
+# Core deep learning
+torch>=2.1.2
+
+# nnUNet dependencies
+acvl-utils>=0.2.3,<0.3
+dynamic-network-architectures>=0.3.1,<0.4
+batchgenerators>=0.25.1
+batchgeneratorsv2>=0.2
+
+# Image processing
+SimpleITK>=2.2.1
+nibabel
+scikit-image>=0.19.3
+tifffile
+imagecodecs
+
+# Data handling
+numpy>=1.24
+pandas
+scipy
+scikit-learn
+
+# Utilities
+tqdm
+dicom2nifti
+graphviz
+requests
+matplotlib
+seaborn
+yacs
+einops
+blosc2>=3.0.0b1
+
