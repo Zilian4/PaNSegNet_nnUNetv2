@@ -1,7 +1,7 @@
 # PaNSegNet Quick Start Guide
-
+**If you are just looking for pancreas segmentation tool, and you have already have weights, skip to Section 3**
 This is a simplified guide for using PaNSegNet. Just copy and paste the commands below.
-If you are just looking for pancreas segmentation tool, and you have already have weights, skip to Section 3
+
 **Prerequisites:**
 - nnUNetv2 installed (see [INSTALL.md](INSTALL.md))
 - Environment variables set:
