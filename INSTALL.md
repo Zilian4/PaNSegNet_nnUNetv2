@@ -10,7 +10,25 @@ This guide will help you install all required packages for PaNSegNet_nnUNetv2.
 
 ## Installation Methods
 
-### Method 1: Install from requirements.txt (Recommended)
+### Method 1: Install with conda ((Recommended))
+
+```bash
+# Create a conda environment
+conda create -n PaNSegNet python=3.10
+conda activate PaNSegNet
+
+# Install PyTorch with CUDA (adjust CUDA version as needed)
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# Install other dependencies
+pip install -r requirements.txt
+
+# Install nnUNetv2 package
+cd nnUNet
+pip install -e .
+```
+
+### Method 3: Install from requirements.txt 
 
 ```bash
 # Navigate to the project directory
@@ -39,23 +57,6 @@ cd PaNSegNet_nnUNetv2/nnUNet
 pip install -e .
 ```
 
-### Method 3: Install with conda (Alternative)
-
-```bash
-# Create a conda environment
-conda create -n PaNSegNet python=3.10
-conda activate PaNSegNet
-
-# Install PyTorch with CUDA (adjust CUDA version as needed)
-conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-
-# Install other dependencies
-pip install -r requirements.txt
-
-# Install nnUNetv2 package
-cd nnUNet
-pip install -e .
-```
 
 ## Verify Installation
 
