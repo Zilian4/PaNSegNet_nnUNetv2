@@ -1,7 +1,7 @@
 from typing import Union, Type, List, Tuple
 
 import torch
-from dynamic_network_architectures.architectures.abstract_arch import (
+from nnunetv2.dynamic_network_architectures.architectures.abstract_arch import (
     AbstractDynamicNetworkArchitectures,
     test_submodules_loadable,
 )
