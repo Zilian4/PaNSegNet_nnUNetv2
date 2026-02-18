@@ -94,7 +94,7 @@ nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_ID -c CONFIGURATION
 
 **Example:**
 ```bash
-nnUNetv2_predict -i /path/to/test/images -o /path/to/predictions -d 001 -c 3d_fullres -tr PaNSegNet_Trainer --save_probabilities
+nnUNetv2_predict -i /path/to/test/images -o /path/to/predictions -d 109 -c 3d_fullres -tr PaNSegNet_Trainer --save_probabilities
 ```
 
 **Notes:**
