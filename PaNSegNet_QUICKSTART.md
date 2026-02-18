@@ -61,11 +61,11 @@ nnUNetv2_train 109 3d_fullres 4 -tr PaNSegNet_Trainer --npz
 
 #### Train on multiple GPUs (parallel):
 ```bash
-CUDA_VISIBLE_DEVICES=0 nnUNetv2_train 001 3d_fullres 0 -tr PaNSegNet_Trainer --npz &
-CUDA_VISIBLE_DEVICES=1 nnUNetv2_train 001 3d_fullres 1 -tr PaNSegNet_Trainer --npz &
-CUDA_VISIBLE_DEVICES=2 nnUNetv2_train 001 3d_fullres 2 -tr PaNSegNet_Trainer --npz &
-CUDA_VISIBLE_DEVICES=3 nnUNetv2_train 001 3d_fullres 3 -tr PaNSegNet_Trainer --npz &
-CUDA_VISIBLE_DEVICES=4 nnUNetv2_train 001 3d_fullres 4 -tr PaNSegNet_Trainer --npz &
+CUDA_VISIBLE_DEVICES=0 nnUNetv2_train 109 3d_fullres 0 -tr PaNSegNet_Trainer --npz &
+CUDA_VISIBLE_DEVICES=1 nnUNetv2_train 109 3d_fullres 1 -tr PaNSegNet_Trainer --npz &
+CUDA_VISIBLE_DEVICES=2 nnUNetv2_train 109 3d_fullres 2 -tr PaNSegNet_Trainer --npz &
+CUDA_VISIBLE_DEVICES=3 nnUNetv2_train 109 3d_fullres 3 -tr PaNSegNet_Trainer --npz &
+CUDA_VISIBLE_DEVICES=4 nnUNetv2_train 109 3d_fullres 4 -tr PaNSegNet_Trainer --npz &
 wait
 ```
 
